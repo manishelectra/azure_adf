@@ -1,0 +1,38 @@
+{
+	"name": "Append_Variable_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Filetype",
+					"value": {
+						"value": "@replace(pipeline().parameters.Filename,'.txt','')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Filename": {
+				"type": "string",
+				"defaultValue": "SalesIndia.txt"
+			}
+		},
+		"variables": {
+			"Filetype": {
+				"type": "Array",
+				"defaultValue": [
+					"SalesUS",
+					"SalesUk"
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-04-11T08:29:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

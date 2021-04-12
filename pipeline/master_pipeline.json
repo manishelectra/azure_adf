@@ -1,0 +1,25 @@
+{
+	"name": "master_pipeline",
+	"properties": {
+		"description": "To run another pipeline using Execute Pipeline activity",
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"description": "To run another pipeline using Execute Pipeline activity",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Copy_Pipeline",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-04-11T08:58:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
